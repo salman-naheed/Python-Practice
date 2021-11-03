@@ -31,7 +31,7 @@ def counter():
 print('Internal funcs')
 counter()
 
-#args
+# *args - positional variable length anrguments
 def multiply(*args):
     z = 1
     for num in args:
@@ -40,3 +40,26 @@ def multiply(*args):
     print(f'z {z}')
 print('args')
 multiply(1,2,3,4)
+
+# **kargs is used to pass a keyworded, variable length arguments
+def profile(**person):
+    print(person)
+    def display(k):
+        if k in person.keys(): print(f'{k} = {person[k]}')
+    display('name')
+    display('age')
+
+
+print('**kargs')
+profile(name='salman', age=23)
+
+# lambda funcs
+# normal
+
+def makesq(h=0,w=0):
+    return w*h
+print(makesq(3,2))
+
+# lambda func
+sqft = lambda h=0,w=0: w * h
+print('sqft',sqft(2,2))
